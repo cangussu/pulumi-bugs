@@ -15,4 +15,4 @@ const txtRecord = new gcp.dns.RecordSet("my-txt-record", {
     type: "TXT",
     rrdatas: ["rec1", "rec2"],
     ttl: 3600,
-});
+}, { deleteBeforeReplace: true });
