@@ -13,6 +13,6 @@ const txtRecord = new gcp.dns.RecordSet("my-txt-record", {
     managedZone: example_zone.name,
     name: "foo.my-domain.com.",
     type: "TXT",
-    rrdatas: ["rec1"],
+    rrdatas: ["rec1", "rec2"],
     ttl: 3600,
 });

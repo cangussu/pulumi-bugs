@@ -1,0 +1,34 @@
+> pulumi up
+Previewing update (dev)
+
+View Live: https://app.pulumi.com/cangussu/pulumi-bugs/dev/previews/c435497b-aec3-449f-8887-a857bc43bed3
+
+     Type                  Name             Plan        Info
+     pulumi:pulumi:Stack   pulumi-bugs-dev
+ +-  └─ gcp:dns:RecordSet  my-txt-record    replace     [diff: ~rrdatas]
+
+Resources:
+    +-1 to replace
+    2 unchanged
+
+Do you want to perform this update? yes
+Updating (dev)
+
+View Live: https://app.pulumi.com/cangussu/pulumi-bugs/dev/updates/4
+
+     Type                  Name             Status                   Info
+     pulumi:pulumi:Stack   pulumi-bugs-dev  **failed**               1 error
+ +-  └─ gcp:dns:RecordSet  my-txt-record    **replacing failed**     [diff: ~rrdatas]; 1 error
+
+Diagnostics:
+  pulumi:pulumi:Stack (pulumi-bugs-dev):
+    error: update failed
+
+  gcp:dns:RecordSet (my-txt-record):
+    error: 1 error occurred:
+    	* Error creating ResourceDnsRecordSet: googleapi: Error 409: The resource 'entity.rrset' named 'foo.my-domain.com. (TXT)' already exists, alreadyExists
+
+Resources:
+    2 unchanged
+
+Duration: 3s
